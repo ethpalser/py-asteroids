@@ -16,10 +16,16 @@ def main():
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 return
+        # update game state
+        player.update(dt)
+
+        # rendering
         screen.fill(color = (0, 0, 0))
         player.draw(screen)
         pygame.display.flip()
-        time_since = clock.tick(60) # pause until 1/60 of second passes
+
+        # pause until 1/60 of second passes
+        time_since = clock.tick(60)
         dt = time_since / 1000
 
 if __name__ == "__main__":
