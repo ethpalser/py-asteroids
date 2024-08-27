@@ -1,15 +1,11 @@
 import pygame
 import circleshape
-from constants import (
-    ASTEROID_MIN_RADIUS,
-    ASTEROID_KINDS,
-    ASTEROID_MAX_RADIUS
-)
+from constants import SHOT_RADIUS
 
-class Asteroid(circleshape.CircleShape):
+class Shot(circleshape.CircleShape):
 
-    def __init__(self, x, y, radius):
-        super().__init__(x, y, radius)
+    def __init__(self, x, y):
+        super().__init__(x, y, SHOT_RADIUS)
 
     def draw(self, screen):
         pygame.draw.circle(screen, (255, 255, 255), self.position, self.radius, 2)
